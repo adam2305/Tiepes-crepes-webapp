@@ -1,9 +1,9 @@
 # Timines-crêpes-webapp
 
 ## Table des matières
-[Introduction](#introduction)
-[Prérequis](#prérequis)
-[Fonctionnalités](#fonctionnalités)
+- [Introduction](#introduction)
+- [Prérequis](#prérequis)
+- [Fonctionnalités](#fonctionnalités)
 
 ## Introduction
 Cette application a été conçue et utilisé dans le cadre de la campagne BDE de la liste Timines Travel 
