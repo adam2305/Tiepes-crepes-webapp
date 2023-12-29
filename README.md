@@ -19,6 +19,8 @@ Elle remplissait une double fonction :
 - Django
 ```bash
 pip install django
+```
+```bash
 pip install django-webpush
 ```
 
