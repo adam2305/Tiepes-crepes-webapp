@@ -24,5 +24,9 @@ pip install django-webpush
 * La web app nous permet de publier facilement des infos sur des évenements pusique le contenu de l'app est généré de façon dynamique. 
 * Les utilisateurs peuvent aussi s'abboner à des notification par feed RSS pour être mis à jour de tout changeemnt
 * Le backend donne accès aux memebres de la liste à un dashboard admin pour modifier le contenu du site rapidement mais surtout pour suivre en temps
-réel les commande de crêpes et pouvoir livrer dans les plus brefs delais.
+réel les commande de crêpes et pouvoir livrer dans les plus brefs delais. Pour des questions de sécurité le chemin pour l'admin à ete modifié, le
+dashboard se trouve :
+```bash
+http://127.0.0.1:8000/erbich12
+```
 
