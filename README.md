@@ -29,4 +29,6 @@ dashboard se trouve :
 ```bash
 http://127.0.0.1:8000/erbich12
 ```
-
+<p align="center">
+  <img src="screenshots/Screenshot_20231228_175007.png" width="170" >
+</p>
