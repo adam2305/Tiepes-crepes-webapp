@@ -5,6 +5,7 @@
 - [Prérequis](#prérequis)
 - [Fonctionnalités](#fonctionnalités)
 - [Screenshots](#screenshots)
+- [Licence](#licence)
 
 ## Introduction
 Cette application a été conçue et utilisé dans le cadre de la campagne BDE de la liste Timines Travel 
@@ -56,3 +57,8 @@ http://127.0.0.1:8000/erbich12
 <p align="center">
   <img src="screenshots/10.png" width="170" >
 </p>
+
+
+## License
+[MIT License](LICENSE)
+
