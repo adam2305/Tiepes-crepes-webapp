@@ -4,6 +4,7 @@
 - [Introduction](#introduction)
 - [Prérequis](#prérequis)
 - [Fonctionnalités](#fonctionnalités)
+- [Screenshots](#screenshots)
 
 ## Introduction
 Cette application a été conçue et utilisé dans le cadre de la campagne BDE de la liste Timines Travel 
@@ -32,3 +33,5 @@ http://127.0.0.1:8000/erbich12
 <p align="center">
   <img src="screenshots/11.png" width="700" >
 </p>
+
+## Screenshots
