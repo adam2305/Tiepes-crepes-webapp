@@ -1,0 +1,76 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+<div class="column is-4 is-offset-4 notification is-white"></div>
+    <div class="column is-4 is-offset-4 notification is-light">
+        <div class="tile notification has-centered-text is-white is-vertical">
+            <p class="title ">
+                Modifier son profil
+            </p>
+            <hr>
+            <form method="post">
+                {% csrf_token %}
+                {%if form.errors%}
+                {% for key,value in form.errors.items%}
+                <div class="notification is-warning">
+                    <button class="delete"></button>
+                    <p>
+                        {{value}}
+                    </p>
+                </div>
+                {% endfor %}
+                {% endif%}
+
+                <div class="field ">
+                    <label class="label is-medium">Identifiant</label>
+                    <div class="control">
+                      {{user_form.username}}
+                    </div>
+                  </div>
+                <div class="field ">
+                    <label class="label is-medium">Chambre</label>
+                    <div class="control">
+                      {{profile_form.chambre}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="control is-centered">
+                    <div class="field is-grouped is-grouped-centered">
+                        <p class="control">
+                            <button class="button is-primary" type="submit" >Modifier</button>
+                        </p>
+                        <p class="control">
+                          <a class="button is-light" href="/">
+                            Annuler
+                          </a>
+                        </p>
+                      </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <hr>
+    <nav class="level is-mobile">
+    <div class="level-item">
+      <img src="{% static 'instagram.png'%}" class="image is-64x64" href="#">
+    </div>
+    <div class="level-item">
+      <img src="{% static 'facebook.png'%}" class="image is-64x64" href="#">
+    </div>
+    <div class="level-item">
+      <img src="{% static 'lydia.png'%}" class="image is-64x64" href="#">
+    </div>
+        
+  </nav>
+    <script>
+        document.querySelectorAll(".notification .delete")
+        .forEach(function ($deleteButton) {
+        const parentNotification = $deleteButton.parentNode;
+        $deleteButton.addEventListener('click', function () {
+        parentNotification.parentNode
+        .removeChild(parentNotification);
+        });
+        });
+        </script>
+{% endblock %}

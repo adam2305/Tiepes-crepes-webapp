@@ -1,0 +1,106 @@
+{% extends "users/base.html"%}
+{% load static %}
+{% block content%}
+{%if form.errors%}
+    {% for key,value in form.errors.items%}
+        <div class="notification is-warning">
+            <button class="delete"></button>
+                <p>
+                    {{value}}
+                </p>
+        </div>
+    {% endfor %}
+{% endif%}
+
+
+<div class="container is-fluid is-mobile">
+    <div class="box is-mobile has-shadow">
+        <p>
+            <b> IMPORTANT :</b> Veuillez utiliser le mail <b>etu.emse.fr</b>, car seul les cotisants ont le droit de créer un compte.
+        </p>
+    </div>
+    <div class="card">
+        <header class="card-header has-background-primary">
+                <p class="card-header-title ">
+                  INSCRIPTION
+                </p>
+                <button class="card-header-icon" aria-label="more options">
+                  <span class="icon">
+                    <i class="fas fa-user-plus"></i>
+                  </span>
+                </button>
+            </header>
+
+            <div class="card-content">
+                <form method="post">
+                {% csrf_token %}
+                
+
+                <div class="field ">
+                    <label class="label is-large">Identifiant</label>
+                    <div class="control">
+                      {{form.username}}
+                    </div>
+                  </div>
+                  
+                  <div class="field">
+                    <label class="label is-large">Email</label>
+                    <div class="control">
+                        {{ form.email }}
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label class="label is-large">Mot de passe</label>
+                    <div class="control">
+                        {{ form.password1 }}
+                        {{ form.errors.password }}
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label class="label is-large">Confirmer mot de passe</label>
+                    <div class="control">
+                        {{ form.password2 }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="control is-centered">
+                    <div class="field is-grouped is-grouped-centered">
+                        <p class="control">
+                            <button class="button is-primary is-medium" type="submit" ><strong>S'inscrire</strong></button>
+                        </p>
+                        <p class="control">
+                          <a class="button is-light is-medium" href="/">
+                            <strong>Annuler</strong>
+                          </a>
+                        </p>
+                      </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+<nav class="level is-mobile">
+    <div class="level-item">
+      <img src="{% static 'instagram.png'%}" class="image is-64x64" href="#">
+    </div>
+    <div class="level-item">
+      <img src="{% static 'facebook.png'%}" class="image is-64x64" href="#">
+    </div>
+    <div class="level-item">
+      <img src="{% static 'lydia.png'%}" class="image is-64x64" href="#">
+    </div>
+        
+  </nav>
+    <script>
+        document.querySelectorAll(".notification .delete")
+        .forEach(function ($deleteButton) {
+        const parentNotification = $deleteButton.parentNode;
+        $deleteButton.addEventListener('click', function () {
+        parentNotification.parentNode
+        .removeChild(parentNotification);
+        });
+        });
+        </script>
+{% endblock%}

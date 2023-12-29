@@ -1,0 +1,266 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+	<div class="card">
+		<header class="card-header has-background-primary">
+		    <p class="card-header-title ">
+		      PLANNING
+		    </p>
+		    <button class="card-header-icon" aria-label="more options">
+		      <span class="icon">
+		        <i class="fas fa-calendar-alt"></i>
+		      </span>
+		    </button>
+  		</header>
+  		<div class="card-image">
+		    <figure class="image is-16by9">
+		      <img src="{% static 'planning.png' %}" alt="Placeholder image">
+		    </figure>
+  		</div>
+  		<div class="card-content">
+  			<p >
+  				Les creneaux en verts corréspondent aux activités organisées par Ti'mines Travel.
+  			</p>
+  		</div>
+	</div>
+</div>
+
+
+<section class="hero is-primary is-fullwidth is-small">
+  <div class="hero-body">
+    <p class="title">
+      Découvrez toutes nos activités
+    </p>
+  </div>
+</section>
+<hr>
+<div class="container is-fluid">
+	
+	<div class="card">
+		<header class="card-header has-background-primary">
+		    <p class="card-header-title ">
+		      Petit dejeuner
+		    </p>
+		    <button class="card-header-icon" aria-label="more options">
+		      <span class="icon">
+		        <i class="fas fa-coffee"></i>
+		      </span>
+		    </button>
+  		</header>
+  		<div class="card-image">
+		    <figure class="image ">
+		      <img src="{% static 'petit.jpg' %}" alt="Placeholder image">
+		    </figure>
+  		</div>
+  		<div class="card-content">
+  			<p><b>Mercredi 01/03 :</b> Un petit dejeuner sera offert aux isminies sur deux creneaux <b>7h-8h30</b> et <b>10h-10h15</b> </p>
+  		</div>
+  		
+	</div>
+	<hr>
+	<div class="card">
+		<header class="card-header has-background-primary">
+		    <p class="card-header-title ">
+		      Chambrathon
+		    </p>
+		    <button class="card-header-icon" aria-label="more options">
+		      <span class="icon">
+		        <i class="fas fa-bed"></i>
+		      </span>
+		    </button>
+  		</header>
+  		<div class="card-content">
+  			<p>
+  				<b>Dimanche 05/03 :</b> Le Chambrathon où vous decouvrirez les chambres de la liste à travers diverses animations et activités.
+  			</p>
+  		</div>
+  		
+	</div>
+	<hr>
+	<div class="card">
+		<header class="card-header has-background-primary">
+		    <p class="card-header-title ">
+		      Activité externe : RRRrrrr!!!
+		    </p>
+		    <button class="card-header-icon" aria-label="more options">
+		      <span class="icon">
+		       <i class="fas fa-bone"></i>
+		      </span>
+		    </button>
+  		</header>
+  		<div class="card-image">
+		    <figure class="image ">
+		      <img src="{% static 'jungle.jpg' %}" alt="Placeholder image">
+		    </figure>
+  		</div>
+  		<div class="card-content">
+  			<p>
+  				<b>Mardi 28/02 :</b> Plongez vous dans la <b>préhistoire</b> loin de tout au milieu d'une <b>forêt</b> neolithique. <b>Formez une équipe</b> et tentez de gagner cet évenemetn sauvage. 
+  			</p>
+  		</div>
+	</div>
+	<hr>
+	<div class="card">
+		<header class="card-header has-background-primary">
+		    <p class="card-header-title ">
+		      Soirée externe : L'âge de glace
+		    </p>
+		    <button class="card-header-icon" aria-label="more options">
+		      <span class="icon">
+		        <i class="far fa-snowflake"></i>
+		      </span>
+		    </button>
+  		</header>
+  		<div class="card-image">
+		    <figure class="image ">
+		      <img src="{% static 'icedage.jpg' %}" alt="Placeholder image">
+		    </figure>
+  		</div>
+  		<div class="card-content">
+  			<p>
+  				<b>Jeudi 02/03 :</b> Retrouvez le <b>froid glacial</b> de l'âge de glace avec Ti'mines Travel qui vous proposez une soirée à la <b>patinoire</b>.
+  			</p>
+  		</div>
+  		<div class="card-content">
+	  		<div id="modal-js-example" class="modal">
+	  			<div class="modal-background"></div>
+				<div class="modal-card ">
+	    			<header class="modal-card-head">
+      					<p class="modal-card-title"><b>Patinoire</b></p>
+ 					</header>
+ 					<section class="model-card-body has-background-white">
+	  				<p class="subtitle">Précisions sur cette soirée:</p>
+	  					<ol type="1">
+							<li> &nbsp;&nbsp;Lieu : Palais Omnisport marseille, des covoiturges seront organisés.</li>
+						    <li> &nbsp;&nbsp;Le patins sont fournis, il faudra toutefois être munis de guants.</li>
+						    <li> &nbsp;&nbsp;Une partie de la piste nous est reservée entièrement.</li>
+						</ol>
+	  				</section>
+	  			</div>
+	  			<button class="modal-close" aria-label="close"></button>
+			</div>
+			<nav class="level">
+				<div class="level-item">
+					<button class="js-modal-trigger button is-primary is-medium" data-target="modal-js-example">
+			  			Important 
+					</button>
+				</div>
+			</nav>
+		</div>
+	</div>
+	
+	<hr>
+	<div class="card">
+		<header class="card-header has-background-primary">
+		    <p class="card-header-title ">
+		      Activité interne : Le moyen âge
+		    </p>
+		    <button class="card-header-icon" aria-label="more options">
+		      <span class="icon">
+		        <i class="fas fa-chess-rook"></i>
+		      </span>
+		    </button>
+  		</header>
+  		<div class="card-image">
+		    <figure class="image ">
+		      <img src="{% static 'middleage.jpg' %}" alt="Placeholder image">
+		    </figure>
+  		</div>
+  		<div class="card-content">
+  			<p>
+  				<b>Lundi 27/02 :</b> retrouvez nous au <b>moyen âge</b> , plongés au milieu d'une <b>fête medievale</b> vous pourrez participer aux nombreuses <b>activités</b> qui seront proposées. 
+  			</p>
+  		</div>
+	</div>
+	<hr>
+	<div class="card">
+		<header class="card-header has-background-primary">
+		    <p class="card-header-title ">
+		      Soirée interne
+		    </p>
+		    <button class="card-header-icon" aria-label="more options">
+		      <span class="icon">
+		        <i class="fas fa-compact-disc"></i>
+		      </span>
+		    </button>
+  		</header>
+  		<div class="card-image">
+		    <figure class="image ">
+		      <img src="{% static 'disco.jpg' %}" alt="Placeholder image">
+		    </figure>
+  		</div>
+  		<div class="card-content">
+  			<p>
+  				<b>Lundi 06/03 :</b> Cette dernière soirée aura lieu à la ME elle nous fera revivre des <b>années 60 jusqu'à nos jours</b>.
+  			</p>
+  		</div>
+	</div>
+
+
+</div>
+
+
+<hr>
+<nav class="level is-mobile">
+    <div class="level-item">
+      <img src="{% static 'instagram.png'%}" class="image is-64x64" href="#">
+    </div>
+    <div class="level-item">
+      <img src="{% static 'facebook.png'%}" class="image is-64x64" href="#">
+    </div>
+    <div class="level-item">
+      <img src="{% static 'lydia.png'%}" class="image is-64x64" href="#">
+    </div>
+        
+  </nav>
+
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', () => {
+  // Functions to open and close a modal
+  function openModal($el) {
+    $el.classList.add('is-active');
+  }
+
+  function closeModal($el) {
+    $el.classList.remove('is-active');
+  }
+
+  function closeAllModals() {
+    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+      closeModal($modal);
+    });
+  }
+
+  // Add a click event on buttons to open a specific modal
+  (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+    const modal = $trigger.dataset.target;
+    const $target = document.getElementById(modal);
+
+    $trigger.addEventListener('click', () => {
+      openModal($target);
+    });
+  });
+
+  // Add a click event on various child elements to close the parent modal
+  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+    const $target = $close.closest('.modal');
+
+    $close.addEventListener('click', () => {
+      closeModal($target);
+    });
+  });
+
+  // Add a keyboard event to close all modals
+  document.addEventListener('keydown', (event) => {
+    const e = event || window.event;
+
+    if (e.keyCode === 27) { // Escape key
+      closeAllModals();
+    }
+  });
+});
+</script>
+
+{% endblock %}

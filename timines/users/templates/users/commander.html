@@ -1,0 +1,196 @@
+{% extends "users/base.html" %}
+
+{% load static %}
+{% block content %}
+
+    {% if commande_form.errors%}
+                {% for key,value in commande_form.errors.items%}
+                    <div class="notification is-warning">
+                        <button class="delete"></button>
+                        <p>
+                            {{value}}
+                        </p>
+                    </div>
+                    {% endfor %}
+    {% endif %}
+
+    <hr>
+    
+    <nav class="level is-horizontal is-mobile">
+  <div class="level-item has-text-centered">
+    <div>
+      <span class="icon">
+      <i class="fas fa-solid fa-user"></i>
+      </span>
+      <span>Clients </span>
+      <p class="subtitle"> &nbsp;{{clients}}</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <span class="icon">
+      <i class="fas fa-sharp fa-solid fa-dolly"></i>
+      </span>
+      <span>Livraisons</span>
+      <p class="subtitle"> &nbsp;{{livraisons}}</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <span class="icon">
+      <i class="fas fa-solid fa-shopping-cart"></i>
+      </span>
+      <span>En cours</span>
+      <p class="subtitle"> &nbsp;{{en_cours}}</p>
+    </div>
+  </div>
+</nav>
+<hr>
+<div class="content is-normal has-centered-text ">
+   <p class="title">
+    Mes commandes
+    </p>
+</div>
+    {% if attente %}
+
+    <div class="container is-fluid is-mobile ">
+        <div class="box is-mobile">
+            <nav class="column is-horizontal is-mobile">
+                <p class="subtitle">
+                    <b> La commande est  en cours de livraison </b>
+                </p>
+                
+                <progress class="progress is-small is-primary" max="100"></progress>
+            </nav>
+        </div>
+    </div>
+    <hr>
+    {% else %}
+    <div class="container is-fluid is-light">
+        <div class="box is-mobile">
+            <nav class="column is-horizontal is-mobile ">
+                <p class="is-normal">
+                    <b>Toutes vos commandes ont étés livrées  &nbsp;</b>
+                    <span class="icon">
+                    <i class="far fa-laugh-beam"></i>
+                    </span>
+                </p>
+            </nav>
+        </div>
+    </div>
+    <hr>
+    {% endif %}
+    
+    <div class="box">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <ol >
+                    <li>Horaires de livraison <b>24/24h 7/7j</b></li>
+                    <li><b>5 crêpes</b> Max par commande </li>
+                    <li><b> 1 seule </b> commande à la fois</li>
+                    <li> &nbsp;Si <b>plusieurs goûts</b> faire une  remarque</li>
+                </ol>
+            </div>
+        </nav>
+    </div>
+
+    <hr>
+    <div class="container is-fluid is-mobile box ">
+        <div class="card ">
+             <header class="card-header has-background-primary">
+                <p class="card-header-title ">
+                  Commander
+                </p>
+                <button class="card-header-icon" aria-label="more options">
+                  <span class="icon">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+                </button>
+            </header>
+        </div>
+        <div class="card-image">
+            <figure class="image is-4by3">
+            <img src="{% static 'crepes9.jpg' %}" alt="Placeholder image">
+            </figure>
+        </div>
+        <div class="card-content">
+            <form method="post" >
+            {% csrf_token %}
+            
+
+            <div class="field has-centered ">
+                <label class="label is-medium">Quantité</label>
+                <div class="control is-rounded ">
+                    {{commande_form.produit}}
+                </div>
+            </div>
+            <hr>
+            <div class="field has-centered ">
+                <label class="label is-medium">Suppelement  (si plusieurs l'indiquer en remarque)</label>
+
+                <div class="control is-large">
+                    {{commande_form.topping}}
+                </div>
+            </div>
+            <hr>
+            <div class="field has-centered ">
+                <label class="label is-medium">Adresse de livraison</label>
+                <div class="control is-centered">
+                    {{commande_form.adresse}}
+                </div>
+            </div>
+            <hr>
+             <div class="field has-centered ">
+                <label class="label is-medium">
+                    Remarques (allérgies,intolerances,...)
+                </label>
+                <div class="control is-centered">
+                    {{commande_form.remarque}}
+                </div>
+            </div>
+
+            <br>
+            <div class="control is-centered">
+                    <div class="field is-grouped is-grouped-centered">
+                        <p class="control">
+                            <button class="button is-primary is-fullwidth is-medium" type="submit" ><strong>Commander</strong></button>
+                        </p>
+                        <p class="control">
+                          <a class="button is-light is-fullwidth is-medium" href="/">
+                            <strong>Retour</strong>
+                          </a>
+                        </p>
+                      </div>
+                </div>
+
+        </form>
+        </div>
+    </div>
+</div>
+
+
+ <nav class="level is-mobile">
+    <div class="level-item">
+      <img src="{% static 'instagram.png'%}" class="image is-64x64" href="#">
+    </div>
+    <div class="level-item">
+      <img src="{% static 'facebook.png'%}" class="image is-64x64" href="#">
+    </div>
+    <div class="level-item">
+      <img src="{% static 'lydia.png'%}" class="image is-64x64" href="#">
+    </div>
+        
+  </nav>
+
+    <script>
+        document.querySelectorAll(".notification .delete")
+        .forEach(function ($deleteButton) {
+        const parentNotification = $deleteButton.parentNode;
+        $deleteButton.addEventListener('click', function () {
+        parentNotification.parentNode
+        .removeChild(parentNotification);
+        });
+        });
+    </script>
+
+{% endblock %}

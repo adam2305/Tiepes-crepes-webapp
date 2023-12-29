@@ -1,0 +1,64 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+<hr>
+
+<div class="container is-fluid">
+    <div class="card">
+        <header class="card-header has-background-primary">
+        <p class="card-header-title">
+          PROFIL
+        </p>
+        <button class="card-header-icon" aria-label="more options">
+          <span class="icon">
+            <i class="far fa-user-circle"></i>
+          </span>
+        </button>
+      </header>
+      <div class="card-content">
+            <div class="tile notification is-white">
+                <p class="subtitle">
+                    <strong>Identifiant :</strong>&emsp;{{user.username}}
+                </p>
+            </div>
+            <div class="tile notification is-white">
+                <p class="subtitle">
+                    <strong>Email :</strong>&emsp;{{user.email}}
+                </p>
+            </div>
+            <div class="tile notification is-white">
+                <p class="subtitle">
+                    <strong>Total commandes:</strong> &emsp;{{total_commande}}
+                </p>
+            </div>
+             <div class="buttons is-centered">
+                <a class="button is-primary is-medium" href="/profile"> <strong>Modifier</strong> </a>
+                <a class="button is-white is-medium" href="/"><strong>Retour</strong></a>
+            </div>
+      </div>
+    </div>
+</div>
+<hr>
+<nav class="level is-mobile">
+    <div class="level-item">
+      <img src="{% static 'instagram.png'%}" class="image is-64x64" href="#">
+    </div>
+    <div class="level-item">
+      <img src="{% static 'facebook.png'%}" class="image is-64x64" href="#">
+    </div>
+    <div class="level-item">
+      <img src="{% static 'lydia.png'%}" class="image is-64x64" href="#">
+    </div>
+        
+  </nav>
+    <script>
+        document.querySelectorAll(".notification .delete")
+        .forEach(function ($deleteButton) {
+        const parentNotification = $deleteButton.parentNode;
+        $deleteButton.addEventListener('click', function () {
+        parentNotification.parentNode
+        .removeChild(parentNotification);
+        });
+        });
+        </script>
+{% endblock %}

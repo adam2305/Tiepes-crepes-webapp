@@ -1,0 +1,123 @@
+{% extends "users/base.html"%}
+{% load static %}
+{% load webpush_notifications %}
+
+
+
+{% block content %}
+
+<section class="hero is-primary is-fullwidth is-small">
+  <div class="hero-body">
+    <p class="subtitle ">
+      <b>Le thème est le voyage dans le temps, revivez les grandes époques de l'Histoire avec Ti'mines Travel</b>
+    </p>
+  </div>
+</section>
+
+<div class="box is is-fullwidth has-text-centered">
+  <p class="subtitle">
+    <b>Activez les notifs rien rater</b>
+  </p>
+
+</div>
+
+<div class="container is-fluid has-background-light">
+
+<hr>
+  <div class="card ">
+    <header class="card-header has-background-primary">
+    <p class="card-header-title ">
+      NOS ÉVENEMENTS
+    </p>
+    <button class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-calendar-alt"></i>
+      </span>
+    </button>
+  </header>
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="{% static 'events.JPG' %}" alt="Placeholder image">
+    </figure>
+  </div>
+    <div class="card-content ">
+      Trouvez ici le <b>planning</b> et accédez aux <b>évenements</b> et aux <b>soirées</b> organisés 
+      par Ti'mines Travel. 
+      </div>
+  <div class="card-content">  
+    <a class="button is-medium  is-primary is-rounded is-fullwidth  is-light is-outlined" href="/planning ">  
+      Accéder au planning</a>
+    </div>
+  </div>
+
+  <hr>
+  <div class="card">
+    <header class="card-header has-background-primary">
+    <h1 class="card-header-title">
+      COMMANDER DES CRÊPES
+    </h1>
+    <button class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-utensils"></i>
+      </span>
+    </button>
+  </header>
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="{% static 'crepes.jpg' %}" alt="Placeholder image">
+    </figure>
+  </div>
+    <div class="card-content">
+      Profitez de nos incroyables <b>crêpes offertes</b> par notre liste <b>24/24h 7/7j</b> du 27 février jusqu'au 7 mars 2023. 
+      </div>
+  <div class="card-content">
+ <a class="button is-medium  is-primary is-fullwidth is-light is-outlined is-rounded" href="/commander">  
+    J'ai envie de crêpes </a>
+    </div>
+  </div>
+
+  <hr>
+  <div class="card">
+    <header class="card-header has-background-primary">
+    <h1 class="card-header-title">
+      NOTRE LISTE
+    </h1>
+    <button class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-users"></i>
+      </span>
+    </button>
+  </header>
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="{% static 'orga.png' %}" class="image " alt="Placeholder image">
+    </figure>
+  </div>
+    <div class="card-content">
+      Découvrez <b>l'équipe</b> derrière cette incroyable liste et et le <b>court-métrage signé Ti'mines Travel</b>.
+      </div>
+  <div class="card-content">
+ <a class="button is-medium  is-primary is-fullwidth is-rounded is-outlined is-light" href="/info">  
+    L'équipe Timines Travel</a>
+    </div>
+  </div>
+
+  <hr>
+
+  <nav class="level is-mobile">
+    <div class="level-item">
+      <img src="{% static 'instagram.png'%}" class="image is-64x64" href="#">
+    </div>
+    <div class="level-item">
+      <img src="{% static 'facebook.png'%}" class="image is-64x64" href="#">
+    </div>
+    <div class="level-item">
+      <img src="{% static 'lydia.png'%}" class="image is-64x64" href="#">
+    </div>
+        
+  </nav>
+
+
+
+
+{% endblock %}

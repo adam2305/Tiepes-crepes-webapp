@@ -1,0 +1,29 @@
+{% extends "users/base.html" %}
+
+{% block content %}
+	<hr>
+	<p class="subtitle ">
+		<b>POUR ADMIN</b> : Générer une notification pour l'ensemble des utilisateurs
+	</p>
+	
+	{% if notification_form.errors%}
+                {% for key,value in notification_form.errors.items%}
+                    <div class="notification is-warning">
+                        <button class="delete"></button>
+                        <p>
+                            {{value}}
+                        </p>
+                    </div>
+                    {% endfor %}
+    {% endif %}
+	<div class="container ">
+		<div class="box is-mobile has-text-centered">
+				<form method="POST">
+					{% csrf_token %}
+			    	{{notification_form.as_p}}
+			    	<br>
+			    	<button class="button is-danger" type="submit">Génerer notif</button>
+				</form>
+			</div>
+	</div>
+{% endblock %}
