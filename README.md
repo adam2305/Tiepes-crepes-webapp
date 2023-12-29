@@ -30,5 +30,5 @@ dashboard se trouve :
 http://127.0.0.1:8000/erbich12
 ```
 <p align="center">
-  <img src="screenshots/11.png" width="500" >
+  <img src="screenshots/11.png" width="700" >
 </p>
